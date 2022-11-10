@@ -28,7 +28,7 @@ echo 'Restarting Services...'
 sudo chmod +x $PWD/setup/scripts/restart.sh
 sudo $PWD/setup/scripts/restart.sh
 
-if [ ! -f `$PWD/setup/scripts/restart.sh` ]
+if [ ! -f `$PWD/restart.sh` ]
 then
     sudo cp -rf $PWD/setup/scripts/restart.sh $PWD
 fi
