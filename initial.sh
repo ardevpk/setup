@@ -27,6 +27,8 @@ echo 'Nginx Settings Done!'
 
 echo 'Restarting Services...'
 sudo chmod +x $PWD/setup/scripts/restart.sh
+sudo chmod +x $PWD/setup/scripts/update.sh
+sudo chmod +x $PWD/setup/scripts/update.py
 sudo $PWD/setup/scripts/restart.sh
 
 if [ ! -f $PWD/restart.sh ]
@@ -34,11 +36,9 @@ then
     sudo cp -rf $PWD/setup/scripts/restart.sh $PWD
 fi
 
-if [ ! -f $PWD/update.py ]
+if [ ! -f $PWD/update.sh ]
 then
-    sudo cp -rf $PWD/setup/scripts/update.py $PWD
+    sudo cp -rf $PWD/setup/scripts/update.sh $PWD
 fi
-
-sudo mv $PWD/setup/ $PWD/backup/ 
 
 echo 'Services Restarted!'
