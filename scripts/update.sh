@@ -1,5 +1,4 @@
 #!/bin/bash
 
-sudo echo "DISPLAY=:0" >> ~/.bashrc
-sudo python3 $PWD/setup/scripts/update.py
+sudo DISPLAY=:0 python3 $PWD/setup/scripts/update.py
 sudo ./restart.sh
