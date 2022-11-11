@@ -2,10 +2,10 @@
 
 echo 'Installing Basic Packages...'
 sudo apt-get update
-sudo apt-get install python3-pip -y
-sudo apt-get install python3-virtualenv -y
-sudo apt-get install supervisor -y
-sudo apt-get install nginx -y
+sudo DEBIAN_FRONTEND=noninteractive apt install -yq python3-pip
+sudo DEBIAN_FRONTEND=noninteractive apt install -yq python3-virtualenv
+sudo DEBIAN_FRONTEND=noninteractive apt install -yq supervisor
+sudo DEBIAN_FRONTEND=noninteractive apt install -yq nginx
 sudo pip3 install requests
 echo 'Basic Packages Installed!'
 
@@ -32,5 +32,12 @@ if [ ! -f $PWD/restart.sh ]
 then
     sudo cp -rf $PWD/setup/scripts/restart.sh $PWD
 fi
+
+if [ ! -f $PWD/update.py ]
+then
+    sudo cp -rf $PWD/setup/scripts/update.py $PWD
+fi
+
+sudo mv $PWD/setup/ $PWD/backup/ 
 
 echo 'Services Restarted!'
