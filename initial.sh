@@ -7,6 +7,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt install -yq python3-virtualenv
 sudo DEBIAN_FRONTEND=noninteractive apt install -yq supervisor
 sudo DEBIAN_FRONTEND=noninteractive apt install -yq nginx
 sudo pip3 install requests
+sudo pip3 install pyautogui
 echo 'Basic Packages Installed!'
 
 echo 'Virtual Env Settings...'
